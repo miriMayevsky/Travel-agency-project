@@ -1,0 +1,16 @@
+.a{
+    background-color: rgb(119 80 80 / 52%);
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height:100vh ;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+.b{
+    top :0;
+    background-color: white;
+    width:60% ;
+    text-align: center;
+}
