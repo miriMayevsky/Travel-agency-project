@@ -1,16 +1,27 @@
-.a{
-    background-color: rgb(119 80 80 / 52%);
+/* .a{
     position: fixed;
-    top:0;
-    width: 100vw;
-    height:100vh ;
+    top:0; */
+    /* background-color: rgba(211, 194, 194, 0.52); */
+
+    /* 
+    
     display: flex;
     justify-content: center;
-    align-items:center ;
-}
-.b{
+    align-items:center ; 
+
+    /* width: 100vw;
+    height:100vh ; */
+/* } */
+/* .b{
     top :0;
     background-color: white;
-    width:60% ;
+    width:40% ;
     text-align: center;
-}
+} */
+/* .a{
+    position: fixed;
+    top:0; 
+    display: flex;
+    justify-content: center;
+    align-items:center ;   
+} */

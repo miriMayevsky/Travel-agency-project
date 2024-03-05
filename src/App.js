@@ -15,6 +15,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {userIn} from './features/user/userSlice'
 import { useState } from 'react';
 import Protected from './Protected';
+import HomePage from './HomePage.js';
+import { addOrder,updateAddress,update } from './features/order/orderSlice';
+// import {updateAddress} from './features/order/orderSlice';
 
 function App() {
 
@@ -28,8 +31,19 @@ function App() {
 
   useEffect(() => {
         let u = localStorage.getItem("currentUser");
+        let o = localStorage.getItem("basket");
+        let a= localStorage.getItem("address");
+        if (o) {
+          let b=dispatch(addOrder(JSON.parse(o)));
+          console.log("b"+b);
+          dispatch(update(JSON.parse(o)));
+        }
+        if (a) {
+          dispatch(updateAddress(JSON.parse(a)));
+        }   
     if (u) {
-      dispatch(userIn(JSON.parse(u)));
+      let c=dispatch(userIn(JSON.parse(u)));
+      console.log("c"+c);
     }
   }, []); // Added an empty dependency array to ensure the effect runs only once
   
@@ -50,9 +64,11 @@ function App() {
           <Route path='basket' element={<SmallBasket />} />
 
         </Route>
-        <Route path='updateProduct' element={<UpdateProduct />} />
+        <Route path="/updateProduct/:id" element={<UpdateProduct />} />
         <Route path='basket' element={<ListBasket />} />
         <Route path='orderForm' element={<OrderForm />} />
+        <Route path='/' element={<HomePage />} />
+
         <Route path='addProduct' element={
           <Protected isSignedIn={isSignedIn}>
           <AddProduct />

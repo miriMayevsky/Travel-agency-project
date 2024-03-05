@@ -4,6 +4,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { userOut } from './userSlice';
 import { Link } from 'react-router-dom';
+import '../../navBar.css';
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
@@ -13,9 +14,12 @@ const LogoutButton = () => {
   };
 
   return (
-    <Link to="/exit" onClick={handleLogout}>
-      יציאה מהאתר
-    </Link>
+    // <Link to="/exit" onClick={handleLogout} className="btn">
+    //   exit 
+    // </Link>
+     <Link to="/exit" onClick={handleLogout}>
+     <button className="btn">exit </button>
+   </Link>
 
   );
 };
